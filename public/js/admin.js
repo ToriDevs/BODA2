@@ -14,7 +14,9 @@ async function loadGuests(){
 async function createGuest(name){
 	try {
 		const res = await fetch('/api/guests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({full_name:name})});
-		if(!res.ok){ alert('Error creando invitado'); return; }
+		let data=null; let raw='';
+		try { raw=await res.text(); data= raw? JSON.parse(raw):null; } catch(parseErr){ console.warn('Respuesta no JSON', raw); }
+		if(!res.ok){ alert('Error creando invitado: '+(data?.error||raw||res.status)); return; }
 		loadGuests();
 	} catch(e){ alert('Error creando invitado'); }
 }
