@@ -76,9 +76,9 @@ body {
 	margin-left:auto; margin-right:auto;
 }
 
-.details-list { list-style:none; padding:0; margin:0 0 2rem; display:grid; gap:.5rem; font-size:1.02rem; }
-.details-list li { position:relative; padding-left:1.4rem; line-height:1.35; }
-.details-list li:before { content:"✦"; position:absolute; left:0; top:.1rem; font-size:.85rem; color:var(--oro); }
+.details-list { list-style:none; padding:0; margin:0 0 2rem; display:grid; gap:.5rem; font-size:1.02rem; text-align:center; }
+.details-list li { position:relative; line-height:1.35; padding:0; }
+.details-list li:before { content:"✦"; display:inline-block; position:relative; top:-1px; margin-right:.5rem; font-size:.85rem; color:var(--oro); }
 .details-list strong { color:var(--olivo); font-weight:700; }
 .details-list a { color:var(--olivo); text-decoration:none; border-bottom:1px solid var(--oro); padding-bottom:2px; transition:color .25s,border-color .25s; }
 .details-list a:hover { color:var(--olivo-suave); border-color:var(--olivo-suave); }
@@ -117,6 +117,9 @@ button:active { transform:translateY(2px); box-shadow:0 1px 2px rgba(0,0,0,.15);
 .hospedaje-label { display:block; font-weight:600; margin-bottom:.6rem; }
 .stay-button { background:var(--oro); border-color:var(--oro); }
 .stay-button:hover { background:#b09d7c; }
+.hospedaje-options .stay-button { font-size:.8rem; padding:10px 18px; border-radius:30px; letter-spacing:.4px; min-width:140px; }
+.hospedaje-options #btnHospedajeSi { background:var(--olivo); border-color:var(--olivo); }
+.hospedaje-options #btnHospedajeSi:hover { background:var(--olivo-suave); }
 
 .response-message { text-align:center; font-size:.95rem; color:var(--olivo-suave); min-height:1.2em; margin:4px 0 1rem; font-style:italic; }
 
