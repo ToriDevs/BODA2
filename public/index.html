@@ -1,0 +1,6 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Invitación Boda</title><link rel="stylesheet" href="/styles/main.css"/></head><body><main style="max-width:760px;margin:3rem auto;padding:2rem;text-align:center;">
+<h1>Panel de Invitados</h1>
+<p><a href="/admin.html">Ir al panel de administración</a></p>
+<p>Si tienes un link personalizado, ábrelo o pega aquí tu código:</p>
+<form id="goForm"><input id="slugInput" placeholder="slug"/><button>Ir</button></form>
+</main><script src="/js/env.js"></script><script>document.getElementById('goForm').addEventListener('submit',e=>{e.preventDefault();const s=slugInput.value.trim(); if(s) location.href='/invitacion.html?i='+encodeURIComponent(s);});</script></body></html>

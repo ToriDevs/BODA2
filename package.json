@@ -1,0 +1,15 @@
+{
+	"name": "boda-invitacion",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vercel dev",
+		"start": "vercel dev",
+		"prepare": "echo 'No build step'",
+		"lint": "echo 'Add ESLint later'"
+	},
+	"dependencies": {
+		"@supabase/supabase-js": "^2.44.4"
+	}
+}

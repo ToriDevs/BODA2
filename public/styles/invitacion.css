@@ -1,0 +1,42 @@
+/* Copiado base del estilo proporcionado (resumido) */
+:root {
+	--marfil:#F8F5F0;
+	--oro:#A18D6C;
+	--olivo:#48634A;
+	--blanco:#FFFFFF;
+	--borde-externo:3px solid var(--oro);
+	--borde-interno:1px solid var(--oro);
+}
+body {background:var(--marfil);font-family:'Lora',serif;color:var(--olivo);margin:0;padding:0;}
+.invitation{background:var(--blanco);max-width:540px;margin:7vw auto 0;padding:4em 2.8em 3em;border-radius:22px;box-shadow:0 6px 32px rgba(163,131,58,.10);text-align:center;position:relative;}
+.decorative-border{position:relative;border-radius:22px;box-sizing:border-box;border:var(--borde-externo);}
+.decorative-border:before{content:"";position:absolute;top:18px;left:18px;right:18px;bottom:18px;border:var(--borde-interno);border-radius:18px;pointer-events:none;z-index:1;}
+.logo-img{width:230px;max-width:98vw;margin:0.5em auto 1.2em;display:block;}
+.main-title{font-family:'Playfair Display',serif;font-size:1.5em;color:var(--olivo);margin:0 0 .3em;font-weight:700;line-height:1.1;}
+.subtitle{font-size:1.13em;color:var(--olivo);margin:.5em 0 1.2em;font-style:italic;}
+.details-list{font-size:1.08em;color:var(--olivo);margin:0 auto 1.2em;line-height:1.7;text-align:left;max-width:340px;padding-left:0;list-style:none;}
+.details-list li{margin-bottom:.2em;display:flex;align-items:center;gap:.5em;}
+.map-link{color:var(--olivo);text-decoration:underline;font-weight:600;}
+.map-link:hover{color:var(--oro);}
+.dear{font-size:1.28em;color:var(--olivo);margin:1.2em 1.5em .7em;font-weight:bold;text-align:left;}
+.personal-message{font-size:1.08em;color:var(--olivo);margin:0 1.5em 1.3em;font-style:italic;text-align:left;}
+.special-phrase{font-family:'Great Vibes','Dancing Script',cursive;color:var(--oro);font-size:1.45em;font-weight:500;letter-spacing:.01em;line-height:1.4;display:block;}
+.rsvp-section{display:flex;justify-content:center;gap:1.5em;margin-bottom:2em;flex-wrap:wrap;}
+.confirmation-button{border:none;border-radius:8px;padding:13px 0;font-size:.92em;font-family:'Lora',serif;font-weight:700;cursor:pointer;transition:background .2s,box-shadow .2s,transform .1s;box-shadow:0 2px 10px rgba(163,131,58,.12);width:190px;letter-spacing:.5px;margin-bottom:0;display:flex;align-items:center;justify-content:center;gap:.7em;}
+.btn-principal{background:var(--olivo);color:#fff;}
+.btn-principal:hover{background:#5d7c5d;transform:translateY(-2px) scale(1.03);}
+.btn-secundario{background:var(--oro);color:#fff;}
+.btn-secundario:hover{background:#b8a47d;transform:translateY(-2px) scale(1.03);}
+#hospedajeContainer{margin:1em 0 .5em;display:none;}
+.hospedaje-label{font-size:1em;color:var(--olivo);margin-bottom:.5em;display:flex;align-items:center;justify-content:center;gap:.5em;font-weight:500;}
+.stay-button{background:var(--olivo);color:#fff;border:none;border-radius:6px;padding:13px 0;font-size:1.0em;font-family:'Lora',serif;font-weight:700;cursor:pointer;transition:background .2s,color .2s,border .2s;width:100%;max-width:220px;letter-spacing:.5px;box-shadow:0 2px 8px rgba(163,131,58,.07);}
+.stay-button:hover{background:#5d7c5d;}
+#responseMessage{margin-top:1.5em;font-weight:bold;color:var(--olivo);font-size:1.13em;min-height:1.5em;text-align:center;}
+.info-button{display:block;margin:.5em auto 2em;background:none;color:var(--olivo);border:1px solid var(--oro);border-radius:16px;padding:.4em 1.2em;font-size:.98em;font-family:'Lora',serif;cursor:pointer;transition:background .2s,color .2s,border .2s;opacity:.85;}
+.info-button:hover{background:var(--marfil);color:var(--oro);border-color:var(--olivo);opacity:1;}
+.footer{font-size:1.07em;color:var(--olivo);margin:2em 0 .5em;font-style:italic;line-height:1.5;text-align:center;}
+.couple{font-family:'Playfair Display',serif;font-size:1.1em;color:var(--oro);font-weight:bold;letter-spacing:1px;display:block;margin-top:.2em;}
+@media (max-width:700px){
+	.invitation{max-width:98vw;padding:2em .5em 1.8em;}
+	.decorative-border:before{top:8px;left:8px;right:8px;bottom:8px;border-radius:12px;}
+}

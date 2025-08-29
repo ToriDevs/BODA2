@@ -1,0 +1,3 @@
+:root { --marfil:#F8F5F0; --oro:#A18D6C; --olivo:#48634A; --blanco:#FFFFFF; }
+body { background:var(--marfil); font-family:'Lora',serif; color:var(--olivo); margin:0; }
+/* Reutilizaremos posteriormente tu CSS detallado para la invitación; placeholder reducido */

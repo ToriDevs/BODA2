@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Admin Invitados</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles/admin.css"/></head><body>
+<h1 style="text-align:center;">Gestión de Invitados</h1>
+<section id="newGuest" style="max-width:960px;margin:1rem auto;padding:1rem;border:1px solid #ddd;border-radius:12px;">
+  <h2>Nuevo invitado</h2>
+  <form id="formNewGuest">
+    <input id="fullName" required placeholder="Nombre completo" style="width:60%;padding:.6rem;"/>
+    <button>Generar link</button>
+  </form>
+</section>
+<section id="listSection" style="max-width:960px;margin:1rem auto;padding:1rem;border:1px solid #ddd;border-radius:12px;">
+  <h2>Listado</h2>
+  <table id="guestsTable" style="width:100%;border-collapse:collapse;font-family:'Lora',serif;">
+    <thead><tr><th>Nombre</th><th>Link</th><th>Asistencia</th><th>Hospedaje</th><th>Acciones</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div id="totals" style="margin-top:1rem;font-weight:bold;"></div>
+</section>
+<script src="/js/env.js"></script><script src="/js/supabaseClient.js"></script><script src="/js/admin.js"></script></body></html>
