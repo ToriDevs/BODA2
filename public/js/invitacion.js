@@ -4,7 +4,7 @@ let guestId=null;let currentAttending=null;let currentLodging=null;
 
 function showMessage(t){respMsg.textContent=t;}
 
-async function fetchGuest(){ if(!slug){ showMessage('Link inválido'); return; } const {data,error}=await window.sbClient.from('guests').select('*').eq('slug',slug).maybeSingle(); if(error||!data){ showMessage('Invitado no encontrado'); return; } guestId=data.id; currentAttending=data.attending; currentLodging=data.lodging; dearEl.textContent=`Querido/a ${data.full_name}:`; if(currentAttending===true){ hospCont.style.display='block'; if(currentLodging===true) showMessage('Has confirmado asistencia y hospedaje.'); else if(currentLodging===false) showMessage('Has confirmado asistencia sin hospedaje.'); } else if(currentAttending===false){ showMessage('Has indicado que no podrás asistir.'); } trackOpen(); }
+async function fetchGuest(){ if(!slug){ showMessage('Link inválido'); return; } const {data,error}=await window.sbClient.from('guests').select('*').eq('slug',slug).maybeSingle(); if(error||!data){ showMessage('Invitado no encontrado'); return; } guestId=data.id; currentAttending=data.attending; currentLodging=data.lodging; dearEl.innerHTML=`Querido/a <strong>${data.full_name}</strong>:`; if(currentAttending===true){ hospCont.style.display='block'; if(currentLodging===true) showMessage('Has confirmado asistencia y hospedaje.'); else if(currentLodging===false) showMessage('Has confirmado asistencia sin hospedaje.'); } else if(currentAttending===false){ showMessage('Has indicado que no podrás asistir.'); } trackOpen(); }
 
 async function trackOpen(){ fetch('/api/track-open',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug})}).catch(()=>{}); }
 

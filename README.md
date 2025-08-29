@@ -16,18 +16,17 @@ Stack:
 ## Estructura
 ```
 /public
-  index.html            -> Landing general (opcional) o redirect
-  invitacion.html       -> Plantilla de invitación (usa query ?i=<slug>)
+  index.html            -> Landing / acceso
+  invitacion.html       -> Plantilla de invitación (?i=<slug>)
   admin.html            -> Panel de gestión
-  info.html             -> Más información para invitados
+  info.html             -> Más información
+  /assets               -> Imágenes (GA.png, etc.)
   /js
     supabaseClient.js
     invitacion.js
     admin.js
-    shared.js
   /styles
-    main.css
-    admin.css
+    main.css            -> Único stylesheet consolidado (admin + invitación)
 ```
 
 ## Variables de Entorno (Vercel)
@@ -112,6 +111,40 @@ git push -u origin main
 ```
 
 Luego en Vercel: Import Project -> selecciona repo -> añade variables de entorno -> Deploy.
+
+## Desarrollo Local (sin hacer push)
+Puedes ejecutar el proyecto en tu máquina con las funciones serverless simuladas por Vercel:
+
+1. Instala dependencias (solo la primera vez)
+  ```bash
+  npm install
+  ```
+2. Crea un archivo `.env.local` (git lo ignora) copiando desde `.env.example` y rellena:
+  ```env
+  NEXT_PUBLIC_SUPABASE_URL=...
+  NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+  SUPABASE_SERVICE_ROLE_KEY=...
+  ```
+3. Levanta entorno de desarrollo (servidor Express local + mismas rutas /api):
+  ```bash
+  npm run dev
+  ```
+  (Opcional: si quieres probar exactamente el runtime de Vercel, usa `npm run vercel-dev`, pero evita modificar ese script para que no se invoque recursivamente.)
+4. Abre:
+  - Invitación: `http://localhost:3000/invitacion.html?i=SLUG` (reemplaza SLUG)
+  - Panel admin: `http://localhost:3000/admin.html`
+
+Cambios en HTML/CSS/JS se reflejan al guardar (refresca el navegador). Si cambias variables de entorno, detén y vuelve a iniciar `vercel dev`.
+
+### ¿Estos archivos se pueden subir al deploy?
+Sí: todos los archivos de código/estilos/HTML añadidos o modificados se pueden subir. El único que NO debes subir con valores reales es `.env.local` (ya está ignorado). El deploy en Vercel seguirá usando las variables configuradas en el panel del proyecto.
+
+### Servir sólo estáticos (sin API)
+Si alguna vez quieres solo ver el HTML/CSS sin las rutas `/api`, puedes ejecutar:
+```bash
+npx serve public
+```
+Pero las acciones de crear/editar invitados fallarán porque no se ejecutan las funciones serverless.
 
 ## Próximos pasos
 - Añadir auth simple para admin (password en env + prompt) o Supabase Auth.

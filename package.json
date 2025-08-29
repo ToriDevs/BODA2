@@ -4,8 +4,9 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vercel dev",
-		"start": "vercel dev",
+		"dev": "node local-server.js",
+		"start": "node local-server.js",
+		"vercel-dev": "npx vercel dev",
 		"prepare": "echo 'No build step'",
 		"lint": "echo 'Add ESLint later'"
 	},
