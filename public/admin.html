@@ -15,10 +15,6 @@
       <img src="/assets/GA.png" alt="GA" class="admin-logo"/>
       <h1 class="admin-title">Gestión de Invitados</h1>
       <p class="admin-subtitle">Crear y seguir confirmaciones</p>
-      <div style="position:absolute; top:18px; right:24px; display:flex; gap:10px;">
-        <button id="refreshBtn" class="mini-btn outline" title="Refrescar">⟳</button>
-        <button id="exportBtn" class="mini-btn outline" title="Exportar CSV">CSV</button>
-      </div>
     </header>
 
     <section id="newGuest" class="card-section">
@@ -37,13 +33,17 @@
     <section id="listSection" class="card-section">
       <div class="section-head">
         <h2 class="section-title" style="margin:0">Listado</h2>
-        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <div class="table-tools">
           <div class="legend">
             <span class="state yes">Sí</span>
             <span class="state no">No</span>
             <span class="state null">Pend.</span>
           </div>
-          <input id="searchInput" placeholder="Buscar..." style="padding:10px 12px; border:2px solid #dacabb; border-radius:10px; background:#fffdfa; font-family:inherit;" />
+          <input id="searchInput" placeholder="Buscar..." class="search-input" />
+          <div class="data-actions" role="group" aria-label="Acciones de datos">
+            <button id="refreshBtn" class="mini-btn outline" title="Refrescar" aria-label="Refrescar lista">⟳ <span class="btn-text">Refrescar</span></button>
+            <button id="exportBtn" class="mini-btn outline" title="Exportar CSV" aria-label="Exportar CSV">⇩ <span class="btn-text">CSV</span></button>
+          </div>
         </div>
       </div>
       <div class="table-wrapper">
@@ -57,7 +57,7 @@
       <div id="totals" style="margin-top:10px; font-size:.75rem; letter-spacing:.5px; color:#4e3d2b;"></div>
     </section>
 
-    <footer class="admin-footer">Panel GA</footer>
+  <footer class="admin-footer">© 2025 · Desarrollado por Guillermo García Amoni</footer>
   </div>
 
   <script src="/js/env.js"></script>
