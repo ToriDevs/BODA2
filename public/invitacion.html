@@ -1,18 +1,18 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Invitación</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles/invitacion.css"/></head><body>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Invitación</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles/main.css"/></head><body>
 <div class="decorative-border"><div class="invitation" id="invitation">
-    <img src="/assets/logo.svg" alt="Logo" class="logo-img"/>
+    <img src="/assets/GA.png" alt="GA" class="logo-img"/>
     <h1 class="main-title">Estás cordialmente invitado a nuestra boda</h1>
     <p class="subtitle">Será un honor compartir contigo este capítulo tan especial de nuestras vidas.</p>
     <ul class="details-list">
-      <li class="icon-date"><span>Fecha: 26–28 septiembre de 2025</span></li>
-      <li class="icon-location">Lugar: <a class="map-link" href="#" target="_blank">Lugar da Pedreira, Lugo</a></li>
-      <li class="icon-time">Hora: Llegada 16:00</li>
-      <li class="icon-dress">Etiqueta: Semi-formal</li>
+      <li><span>Fecha: 26–28 septiembre de 2025</span></li>
+      <li>Lugar: <a class="map-link" href="#" target="_blank">Lugar da Pedreira, Lugo</a></li>
+      <li>Hora: Llegada 16:00</li>
+      <li>Etiqueta: Semi-formal</li>
     </ul>
-    <p class="dear" id="dear"></p>
-    <p class="personal-message"><span class="special-phrase">Te esperamos con ilusión para celebrar juntos, entre brindis, música y memorias que atesoraremos siempre.</span></p>
+    <p class="dear-guest-text" id="dear"></p>
+    <p><span class="special-phrase">Te esperamos con ilusión para celebrar juntos, entre brindis, música y memorias que atesoraremos siempre.</span></p>
     <div class="rsvp-section">
-      <button id="btnSi" class="confirmation-button btn-principal">✓ Sí, asistiré</button>
+      <button id="btnSi" class="confirmation-button">✓ Sí, asistiré</button>
       <button id="btnNo" class="confirmation-button btn-secundario">✕ No podré asistir</button>
     </div>
     <div id="hospedajeContainer">
@@ -22,8 +22,8 @@
         <button id="btnHospedajeNo" class="stay-button" style="background:var(--oro);">No, gracias</button>
       </div>
     </div>
-    <div id="responseMessage"></div>
+    <div id="responseMessage" class="response-message"></div>
     <button class="info-button" id="infoBtn">Más información</button>
-    <div class="footer con-carino"><span class="special-phrase">Con todo nuestro cariño,</span><span class="couple">GUILLERMO & ALEJANDRA</span></div>
+    <div class="footer"><span class="special-phrase">Con todo nuestro cariño,</span><span class="couple">GUILLERMO & ALEJANDRA</span></div>
 </div></div>
 <script src="/js/env.js"></script><script src="/js/supabaseClient.js"></script><script src="/js/invitacion.js"></script></body></html>

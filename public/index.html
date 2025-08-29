@@ -1,6 +1,12 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Invitación Boda</title><link rel="stylesheet" href="/styles/main.css"/></head><body><main style="max-width:760px;margin:3rem auto;padding:2rem;text-align:center;">
-<h1>Panel de Invitados</h1>
-<p><a href="/admin.html">Ir al panel de administración</a></p>
-<p>Si tienes un link personalizado, ábrelo o pega aquí tu código:</p>
-<form id="goForm"><input id="slugInput" placeholder="slug"/><button>Ir</button></form>
-</main><script src="/js/env.js"></script><script>document.getElementById('goForm').addEventListener('submit',e=>{e.preventDefault();const s=slugInput.value.trim(); if(s) location.href='/invitacion.html?i='+encodeURIComponent(s);});</script></body></html>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Invitación Boda</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles/main.css"/></head><body>
+<main style="max-width:760px;margin:3rem auto;padding:2rem;text-align:center;">
+	<img src="/assets/GA.png" alt="GA" class="logo-img" style="width:120px; margin-bottom:.5rem;"/>
+	<h1 class="main-title" style="margin-top:0;">Panel de Invitados</h1>
+	<p><a href="/admin.html">Ir al panel de administración</a></p>
+	<p>Si tienes un link personalizado, ábrelo o pega aquí tu código:</p>
+	<form id="goForm" style="display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+		<input id="slugInput" placeholder="slug" style="padding:.8rem 1rem; border:2px solid #dacabb; border-radius:12px; font-family:'Lora',serif;"/>
+		<button style="padding:.8rem 1.4rem; background:var(--olivo); color:#fff; border:none; border-radius:12px; font-family:'Lora',serif; font-weight:600; cursor:pointer;">Ir</button>
+	</form>
+</main>
+<script src="/js/env.js"></script><script>document.getElementById('goForm').addEventListener('submit',e=>{e.preventDefault();const s=slugInput.value.trim(); if(s) location.href='/invitacion.html?i='+encodeURIComponent(s);});</script></body></html>
