@@ -18,6 +18,7 @@ body {
 	margin:0;
 	-webkit-font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
+	-webkit-tap-highlight-color:transparent;
 }
 
 /* Layout wrapper */
@@ -59,10 +60,10 @@ body {
 .main-title {
 	font-family:'Playfair Display',serif;
 	font-weight:600;
-	font-size:clamp(1.55rem,3.3vw,2.15rem); /* reducido */
+	font-size:clamp(1.45rem,3vw,1.95rem); /* un poco más pequeño */
 	text-align:center;
-	margin:0 0 .55rem;
-	letter-spacing:.45px;
+	margin:0 0 .5rem;
+	letter-spacing:.44px;
 	color:var(--olivo);
 }
 
@@ -80,12 +81,13 @@ body {
 .details-list li { position:relative; line-height:1.35; padding:0; }
 .details-list li:before { content:"✦"; display:inline-block; position:relative; top:-1px; margin-right:.5rem; font-size:.85rem; color:var(--oro); }
 .details-list strong { color:var(--olivo); font-weight:700; }
-.details-list a { color:var(--olivo); text-decoration:none; border-bottom:1px solid var(--oro); padding-bottom:2px; transition:color .25s,border-color .25s; }
-.details-list a:hover { color:var(--olivo-suave); border-color:var(--olivo-suave); }
+.details-list a { color:var(--olivo); text-decoration:underline; text-decoration-color:var(--oro); text-underline-offset:3px; border-bottom:none; font-weight:600; position:relative; transition:color .25s,text-decoration-color .25s; }
+.details-list a:after { content:'↗'; font-size:.7em; margin-left:4px; color:var(--oro); opacity:.85; position:relative; top:-1px; }
+.details-list a:hover { color:var(--olivo-suave); text-decoration-color:var(--olivo-suave); }
 
 .dear-guest-text { font-weight:600; font-size:1.15rem; margin:0 0 1.1rem; text-align:center; letter-spacing:.5px; }
 
-.special-phrase { font-family:'Playfair Display',serif; font-style:italic; font-weight:600; color:var(--olivo); }
+.special-phrase { font-family:'Playfair Display',serif; font-style:italic; font-weight:600; color:var(--olivo); display:block; margin:0 auto 1.6rem; text-align:center; }
 
 p { margin:0 0 1.6rem; line-height:1.55; }
 
@@ -137,6 +139,23 @@ button:active { transform:translateY(2px); box-shadow:0 1px 2px rgba(0,0,0,.15);
 	.subtitle { font-size:1rem; }
 	.details-list { font-size:.98rem; }
 	.couple { font-size:2.1rem; }
+}
+
+/* Extra tightening for small phones */
+@media (max-width:480px){
+	.invitation { padding:36px 22px 34px; }
+	.logo-img { width:170px; }
+	.main-title { font-size:1.55rem; letter-spacing:.3px; }
+	.subtitle { font-size:.95rem; margin-bottom:1.25rem; }
+	.details-list { font-size:.95rem; gap:.4rem; }
+	.rsvp-main { max-width:100%; }
+	.rsvp-main .confirmation-button { flex:1 1 100%; min-width:unset; }
+	.confirmation-button, .stay-button { font-size:.9rem; padding:11px 20px; }
+	.hospedaje-options .stay-button { min-width:120px; font-size:.75rem; padding:9px 14px; }
+	.special-phrase { font-size:1rem; margin:0 auto 1.2rem; max-width:32ch; }
+	.dear-guest-text { font-size:1.05rem; }
+	.footer { gap:.6rem; margin-top:1.8rem; }
+	.closing-line { font-size:1.4rem; }
 }
 
 @media (prefers-reduced-motion:no-preference) {
@@ -251,4 +270,18 @@ button:active { transform:translateY(2px); box-shadow:0 1px 2px rgba(0,0,0,.15);
 	.section-title { font-size:1.2rem; }
 	.pretty-table thead th, .pretty-table tbody td { padding:10px 10px; }
 	.row-actions button { padding:4px 8px; }
+}
+
+/* Admin tighter mobile layout */
+@media (max-width:600px){
+	.table-tools { flex-direction:column; align-items:stretch; }
+	.search-input { width:100%; }
+	.data-actions { width:100%; justify-content:flex-start; }
+	.legend { order:2; }
+}
+
+/* Add subtle scroll hint for table on narrow screens */
+@media (max-width:680px){
+	.table-wrapper { position:relative; }
+	.table-wrapper:after { content:'← desliza →'; position:absolute; top:6px; right:12px; font-size:.55rem; letter-spacing:.08em; background:rgba(248,245,240,.9); padding:4px 6px; border-radius:12px; color:var(--gris); }
 }
