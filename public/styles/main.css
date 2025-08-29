@@ -85,7 +85,7 @@ body {
 .details-list a:after { content:'↗'; font-size:.7em; margin-left:4px; color:var(--oro); opacity:.85; position:relative; top:-1px; }
 .details-list a:hover { color:var(--olivo-suave); text-decoration-color:var(--olivo-suave); }
 
-.dear-guest-text { font-weight:600; font-size:1.15rem; margin:0 0 1.1rem; text-align:center; letter-spacing:.5px; }
+.dear-guest-text { font-weight:600; font-size:1.32rem; margin:0 0 1.15rem; text-align:center; letter-spacing:.55px; }
 
 .special-phrase { font-family:'Playfair Display',serif; font-style:italic; font-weight:600; color:var(--olivo); display:block; margin:0 auto 1.6rem; text-align:center; }
 
