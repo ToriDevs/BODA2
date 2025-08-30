@@ -93,8 +93,8 @@ p { margin:0 0 1.6rem; line-height:1.55; }
 
 .rsvp-section { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin:1.6rem 0 1.2rem; }
 .rsvp-main { max-width:420px; margin-left:auto; margin-right:auto; }
-.rsvp-main .confirmation-button { flex:1 1 0; min-width:160px; }
-.rsvp-main .confirmation-button { font-size:.92rem; padding:12px 18px; }
+.rsvp-main .confirmation-button { flex:0 0 200px; width:200px; min-width:0; display:flex; align-items:center; justify-content:center; min-height:48px; }
+.rsvp-main .confirmation-button { font-size:.88rem; padding:9px 14px; }
 
 button { font-family:'Lora',serif; cursor:pointer; }
 
@@ -130,32 +130,88 @@ button:active { transform:translateY(2px); box-shadow:0 1px 2px rgba(0,0,0,.15);
 
 .footer { text-align:center; margin-top:2.4rem; display:flex; flex-direction:column; gap:.9rem; font-size:.95rem; }
 .closing-line { font-family:'Great Vibes',cursive; font-size:1.55rem; color:var(--oro); letter-spacing:.5px; }
-.couple { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; letter-spacing:1px; color:var(--oro); line-height:1; }
+.couple { font-family:'Playfair Display',serif; font-size:2.15rem; font-weight:700; letter-spacing:2.1px; color:var(--oro); line-height:1.06; display:inline-block; text-wrap:balance; }
+
+/* Info page card */
+.info-card { background:var(--blanco); max-width:820px; width:100%; padding:64px 64px 54px; border:1px solid var(--oro); border-radius:var(--radius); box-shadow:var(--shadow); position:relative; box-sizing:border-box; }
+.info-card:before,.info-card:after { content:""; position:absolute; inset:0; pointer-events:none; border-radius:var(--radius); }
+.info-card:before { border:6px double var(--oro); margin:10px; opacity:.5; }
+.info-card:after { border:1px solid var(--oro-claro); margin:24px; opacity:.35; }
+.info-header { display:flex; align-items:center; gap:14px; margin:0 0 1.8rem; }
+.info-title { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4vw,2.55rem); margin:0; color:var(--olivo); letter-spacing:.6px; }
+.info-block { margin:0 0 2rem; line-height:1.55; font-size:1.02rem; }
+.info-block p { margin:0 0 1rem; }
+.info-subtitle { font-family:'Playfair Display',serif; font-size:1.45rem; margin:0 0 1.1rem; color:var(--olivo); display:flex; align-items:center; gap:10px; }
+.program-item { margin:0 0 1.6rem; }
+.program-item h3 { margin:0 0 .3rem; font-size:1.02rem; font-weight:600; display:flex; align-items:center; gap:8px; }
+.program-item p { margin:0; font-size:.95rem; }
+.info-actions { text-align:center; margin-top:.5rem; }
+.info-back-btn { display:inline-block; background:transparent; color:var(--olivo); border:1px solid var(--olivo); padding:.65em 1.6em; border-radius:40px; font-family:'Lora',serif; font-weight:600; font-size:.9rem; letter-spacing:.5px; text-decoration:none; transition:background .25s,color .25s; }
+.info-back-btn:hover { background:var(--olivo); color:var(--blanco); }
+
+/* Inline icon system using pseudo + emoji fallback */
+.info-icon { width:1.4em; height:1.4em; display:inline-flex; align-items:center; justify-content:center; font-size:1.1em; color:var(--oro); }
+.info-icon.envelope:before { content:'✉'; }
+.info-icon.calendar:before { content:'🗓'; }
+.info-icon.ring:before { content:'💍'; }
+.info-icon.party:before { content:'🎉'; }
+.info-icon.night:before { content:'🌙'; }
+.info-icon.info:before { content:'ℹ'; }
+
+@media (max-width:720px){
+	.info-card { padding:52px 46px 46px; }
+	.info-title { font-size:2.1rem; }
+	.info-block { font-size:1rem; margin-bottom:1.9rem; }
+	.info-subtitle { font-size:1.28rem; margin-bottom:1rem; }
+}
+@media (max-width:520px){
+	.info-card { padding:44px 30px 38px; }
+	.info-title { font-size:1.82rem; }
+	.info-block { margin-bottom:1.7rem; }
+	.info-subtitle { font-size:1.18rem; }
+	.program-item { margin-bottom:1.3rem; }
+	.program-item h3 { font-size:.95rem; }
+}
+@media (max-width:400px){
+	.info-card { padding:40px 22px 34px; }
+	.info-title { font-size:1.72rem; }
+	.info-block { font-size:.97rem; margin-bottom:1.55rem; }
+	.info-subtitle { font-size:1.12rem; }
+	.program-item h3 { font-size:.92rem; }
+}
 
 /* Responsive tweaks */
 @media (max-width:640px) {
 	.invitation { padding:44px 34px 40px; }
-	.main-title { font-size:2rem; }
+	/* Slightly smaller so it wraps more gracefully */
+	.main-title { font-size:1.85rem; line-height:1.22; }
 	.subtitle { font-size:1rem; }
 	.details-list { font-size:.98rem; }
-	.couple { font-size:2.1rem; }
+	.couple { font-size:1.8rem; letter-spacing:1.6px; }
 }
 
 /* Extra tightening for small phones */
 @media (max-width:480px){
 	.invitation { padding:36px 22px 34px; }
-	.logo-img { width:170px; }
-	.main-title { font-size:1.55rem; letter-spacing:.3px; }
+	/* Larger logo on very small phones as requested */
+	.logo-img { width:210px; max-width:68%; }
+	.main-title { font-size:1.5rem; line-height:1.24; letter-spacing:.2px; max-width:22ch; margin-left:auto; margin-right:auto; text-wrap:balance; }
 	.subtitle { font-size:.95rem; margin-bottom:1.25rem; }
 	.details-list { font-size:.95rem; gap:.4rem; }
 	.rsvp-main { max-width:100%; }
-	.rsvp-main .confirmation-button { flex:1 1 100%; min-width:unset; }
-	.confirmation-button, .stay-button { font-size:.9rem; padding:11px 20px; }
+	/* Stack full width but add lateral space */
+	.rsvp-main .confirmation-button { flex:none; width:260px; max-width:calc(100% - 44px); min-width:0; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; min-height:46px; }
+	.confirmation-button { font-size:.78rem; padding:8px 12px; }
+	.confirmation-button.btn-secundario { font-size:.78rem; padding:8px 12px; }
+	.stay-button { font-size:.78rem; padding:9px 14px; }
 	.hospedaje-options .stay-button { min-width:120px; font-size:.75rem; padding:9px 14px; }
 	.special-phrase { font-size:1rem; margin:0 auto 1.2rem; max-width:32ch; }
+	/* Adjusted margins/padding for the special phrase on very small phones */
+	.special-phrase { padding:0 6px; max-width:30ch; margin:0 auto 1.1rem; }
 	.dear-guest-text { font-size:1.05rem; }
 	.footer { gap:.6rem; margin-top:1.8rem; }
 	.closing-line { font-size:1.4rem; }
+	.couple { font-size:1.55rem; letter-spacing:1.2px; }
 }
 
 @media (prefers-reduced-motion:no-preference) {
